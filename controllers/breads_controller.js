@@ -23,6 +23,7 @@ breads.get('/:arrayIndex', (req, res) => {
     bread: Bread[req.params.arrayIndex]
   })
 } else {
-  res.send('404')
+  res.send('404 <li><a href="/breads">Go home</a></li>')
+  
 }
 })
