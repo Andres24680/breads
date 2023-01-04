@@ -37,6 +37,10 @@ breads.delete('/:indexArray', (req, res) => {
 
 //New 
 breads.get('/new', (req, res) => {
+  Bread.find()
+   .then(foundBreads => {
+    console.log(foundBreads)
+   })
   res.render('new')
 })
 
@@ -79,5 +83,7 @@ breads.get('/:arrayIndex', (req, res) => {
 
 
 module.exports = breads
+
+
 
 
