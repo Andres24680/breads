@@ -7,7 +7,7 @@ const { Schema } = mongoose
 const breadSchema = new Schema({
   name: { type: String, required: true },
   hasGluten: { type: Boolean }, // shorthand way to write this : Boolean,
-  image: { type: String, default: 'http://placehold.it/500x500.png' }
+  image: { type: String, default: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJlYWR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60' }
 })
 
 const Bread = mongoose.model('Bread', breadSchema)
