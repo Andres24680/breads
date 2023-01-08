@@ -21,14 +21,14 @@ function Edit ({bread, index}) {
             id="image"/>
             defaultValue={bread.image}
             <label htmlFor="baker">Baker</label>
-<select name="baker" id="baker" defaultValue={bread.baker}>
-<option value="Panos">Panos</option>
-  <option value="Jake">Jake</option>
-  <option value="Andres">Andres</option>
-  <option value="Jason">Jason</option>
-  <option value="Diego">Diego</option>
-  <option value="Stephen">Stephen</option>
-</select>
+              <select name="baker" id="baker" defaultValue={bread.baker}>
+              <option value="Panos">Panos</option>
+                <option value="Jake">Jake</option>
+                <option value="Andres">Andres</option>
+                <option value="Jason">Jason</option>
+                <option value="Diego">Diego</option>
+                <option value="Stephen">Stephen</option>
+              </select>
 
           <label htmlFor="hasGluten">Has Gluten?</label>
           <input
