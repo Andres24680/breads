@@ -97,12 +97,17 @@ breads.put('/:id', (req, res) => {
 })
 
 // EDIT
+// EDIT
 breads.get('/:id/edit', (req, res) => {
-  Bread.findById(req.params.id) 
-    .then(foundBread => { 
-      res.render('edit', {
-        bread: foundBread 
-      })
+  Baker.find()
+    .then(foundBakers => {
+        Bread.findById(req.params.id)
+          .then(foundBread => {
+            res.render('edit', {
+                bread: foundBread, 
+                bakers: foundBakers 
+            })
+          })
     })
 })
 
