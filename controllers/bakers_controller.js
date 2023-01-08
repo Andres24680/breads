@@ -20,6 +20,16 @@ baker.get('/data/seed', (req, res) => {
     .then(res.redirect('/breads'))
 })
 
+// Show: 
+baker.get('/:id', (req, res) => {
+    Baker.findById(req.params.id)
+        .populate('breads')
+        .then(foundBaker => {
+            res.render('bakerShow', {
+                baker: foundBaker
+            })
+        })
+})
 
 
 
