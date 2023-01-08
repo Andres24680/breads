@@ -1,7 +1,8 @@
 const React = require('react')
+const baker = require('../controllers/bakers_controller')
 const Default = require('./layouts/Default')
 
-function New () {
+function New ( {bakers}) {
     return (
       <Default>
         <h2>Add a new bread</h2>
@@ -20,12 +21,11 @@ function New () {
             id="image"/>
           <label htmlFor="baker">Baker</label>
             <select name="baker" id="baker">
-              <option value="Panos">Panos</option>
-              <option value="Jake">Jake</option>
-              <option value="Andres">Andres</option>
-              <option value="Jason">Jason</option>
-              <option value="Diego">Diego</option>
-              <option value="Stephen">Stephen</option>
+              {bakers.map((baker) => {
+                return(
+                  <option value={baker.id} key={baker.id}>{baker.name}</option>
+                )
+              })}
             </select>
 
           <label htmlFor="hasGluten">Has Gluten?</label>

@@ -1,7 +1,8 @@
 const express = require('express')
 const breads = express.Router()
 const Bread = require('../models/bread.js')
-
+const Baker = require('../models/baker.js')
+const baker = require('./bakers_controller.js')
 
 // INDEX
 breads.get('/', (req, res) => {
@@ -32,11 +33,12 @@ breads.post('/', (req, res) => {
 
 //New 
 breads.get('/new', (req, res) => {
-  Bread.find()
-   .then(foundBreads => {
-    console.log(foundBreads)
-   })
-  res.render('new')
+  Baker.find()
+  .then(foundBakers => {
+    res.render('new', {
+      bakers: foundBakers
+    })
+  })
 })
 
 //new routes for the seed extra assigment 
