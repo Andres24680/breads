@@ -30,3 +30,5 @@ module.exports = [
       bio: 'Is NOT a shoe. Occasionally a fan of lobsters.'
     },
   ]
+
+  // /bakers/data/seed
