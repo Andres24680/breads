@@ -5,19 +5,16 @@ const Baker = require('../models/baker.js')
 const baker = require('./bakers_controller.js')
 
 // Index:
-breads.get('/', (req, res) => {
-  Baker.find()
-    .then(foundBakers => {
-      Bread.find()
-      .then(foundBreads => {
+breads.get('/', async (req, res) => {
+  const foundBakers = await Baker.find().lean()
+  const foundBreads = await Bread.find().lean()//.limit(2) add a limit to how many breads show on page 
           res.render('index', {
               breads: foundBreads,
               bakers: foundBakers,
               title: 'Index Page'
           })
       })
-    })
-})
+
 
 
 
